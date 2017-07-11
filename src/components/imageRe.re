@@ -33,6 +33,7 @@ module type ImageComponent = {
     source::imageSource? =>
     style::StyleRe.t? =>
     testID::string? =>
+    tintColor::string? =>
     resizeMethod::[< | `auto | `resize | `scale]? =>
     accessibilityLabel::string? =>
     accessible::bool? =>
@@ -93,6 +94,7 @@ module CreateComponent (Impl: ViewRe.Impl) :ImageComponent => {
       ::source=?
       ::style=?
       ::testID=?
+      ::tintColor=?
       ::resizeMethod=?
       ::accessibilityLabel=?
       ::accessible=?
@@ -141,6 +143,7 @@ module CreateComponent (Impl: ViewRe.Impl) :ImageComponent => {
               ),
             "style": from_opt style,
             "testID": from_opt testID,
+            "tintColor": from_opt tintColor,
             "resizeMethod":
               from_opt (
                 UtilsRN.option_map

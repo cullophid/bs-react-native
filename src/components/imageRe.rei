@@ -33,6 +33,7 @@ module type ImageComponent = {
     source::imageSource? =>
     style::StyleRe.t? =>
     testID::string? =>
+    tintColor::string? =>
     resizeMethod::[< | `auto | `resize | `scale]? =>
     accessibilityLabel::string? =>
     accessible::bool? =>
